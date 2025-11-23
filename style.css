@@ -153,6 +153,71 @@ body {
     font-weight: 600;
 }
 
+/* ================= SKILLS SECTION ================= */
+
+.skills {
+    padding: 80px 20px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(5px);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+.skill-box {
+    padding: 20px 0;
+    border: 2px solid cyan;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: cyan;
+    text-shadow: 0 0 10px cyan;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+    transition: 0.3s ease;
+    cursor: default;
+}
+
+/* Hover Neon Boost */
+.skill-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px cyan, 0 0 50px cyan;
+}
+
+.skill-box i {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: cyan;
+    text-shadow: 0 0 15px cyan;
+    display: block;
+}
+
+.skill-box p {
+    margin-top: 8px;
+    font-size: 1.2rem;
+}
+
+/* ========== Responsive ========== */
+
+@media (max-width: 768px) {
+    .skill-box {
+        font-size: 1.1rem;
+        padding: 18px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .skill-box {
+        font-size: 1rem;
+        padding: 15px 0;
+    }
+}
+
 /* =========================
        Projects Section
 ========================= */
