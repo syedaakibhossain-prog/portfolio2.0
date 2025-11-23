@@ -1,0 +1,249 @@
+/* Import futuristic fonts */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;600&display=swap');
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #000;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* ===================
+   Video Background
+=================== */
+.bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.65);
+    z-index: -1;
+}
+
+/* ===================
+   Profile Neon Frame
+=================== */
+.profile-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+.neon-frame {
+    width: 230px;
+    height: 230px;
+    padding: 8px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #00f7ff, #d500ff);
+    box-shadow:
+        0 0 15px #00f7ff,
+        0 0 30px #d500ff,
+        0 0 50px #00f7ff;
+    animation: glow 2s infinite alternate;
+}
+
+.neon-frame img {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 10px #00f7ff, 0 0 20px #d500ff;
+    }
+
+    100% {
+        box-shadow: 0 0 30px #00f7ff, 0 0 60px #d500ff;
+    }
+}
+
+/* ===================
+        Hero Section
+=================== */
+.hero {
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.name {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 48px;
+    letter-spacing: 2px;
+    color: #00f7ff;
+    text-shadow: 0 0 10px #00f7ff, 0 0 20px #d500ff;
+}
+
+.tagline {
+    font-size: 20px;
+    margin-top: 10px;
+    opacity: 0.9;
+}
+
+/* Scroll Arrow */
+.scroll-down {
+    margin-top: 40px;
+}
+
+.scroll-down span {
+    width: 20px;
+    height: 20px;
+    border-bottom: 3px solid #00f7ff;
+    border-right: 3px solid #00f7ff;
+    display: inline-block;
+    transform: rotate(45deg);
+    animation: scroll 1.5s infinite;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateY(0) rotate(45deg);
+    }
+
+    to {
+        transform: translateY(10px) rotate(45deg);
+    }
+}
+
+/* ===================
+       About Section
+=================== */
+.about {
+    padding: 80px 40px;
+    text-align: center;
+}
+
+.section-title {
+    font-family: 'Orbitron';
+    font-size: 34px;
+    color: #00f7ff;
+    margin-bottom: 20px;
+    text-shadow: 0 0 12px #00f7ff;
+}
+
+.about-text {
+    font-size: 18px;
+    max-width: 850px;
+    margin: auto;
+    line-height: 1.7;
+}
+
+.highlight {
+    color: #d500ff;
+    font-weight: 600;
+}
+
+/* =========================
+       Projects Section
+========================= */
+.projects {
+    padding: 80px 40px;
+    text-align: center;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 35px;
+    max-width: 1000px;
+    margin: auto;
+    padding-top: 20px;
+}
+
+/* 3D Flip Card Base */
+.flip-card {
+    background: transparent;
+    width: 100%;
+    height: 200px;
+    perspective: 1200px;
+}
+
+/* Inner wrapper rotates */
+.flip-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s ease;
+}
+
+/* Flip animation */
+.flip-card:hover .flip-inner {
+    transform: rotateY(180deg);
+}
+
+/* Front & back styles */
+.flip-front,
+.flip-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 14px;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    background: rgba(0, 0, 0, 0.35);
+    border: 2px solid cyan;
+    box-shadow: 0 0 15px cyan;
+}
+
+/* Front Face */
+.flip-front h3 {
+    font-size: 24px;
+    color: #00f7ff;
+    text-shadow: 0 0 12px #00f7ff;
+}
+
+/* Back Face */
+.flip-back {
+    transform: rotateY(180deg);
+    border-color: #d500ff;
+    box-shadow: 0 0 20px #d500ff;
+    padding: 20px;
+}
+
+.flip-back p {
+    font-size: 15px;
+    opacity: 0.9;
+    margin-bottom: 12px;
+}
+
+/* Button */
+.project-btn {
+    padding: 8px 18px;
+    text-decoration: none;
+    background: cyan;
+    color: #000;
+    border-radius: 6px;
+    font-weight: bold;
+    box-shadow: 0 0 15px cyan;
+    transition: 0.3s;
+}
+
+.project-btn:hover {
+    background: #d500ff;
+    box-shadow: 0 0 25px #d500ff;
+}
